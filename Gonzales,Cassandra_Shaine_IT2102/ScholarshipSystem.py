@@ -36,7 +36,7 @@ def validate_login():
         else:
             conn = connect_db()
             cursor = conn.cursor()
-            cursor.execute("SELECT userid FROM accounts WHERE username=%s AND password=%s", (entry_user.get(), entry_pass.get()))  # Ensure `userid` exists in accounts
+            cursor.execute("SELECT userid FROM accounts WHERE username=%s AND password=%s", (entry_user.get(), entry_pass.get()))  
             result = cursor.fetchone()
             conn.close()
             if result:
